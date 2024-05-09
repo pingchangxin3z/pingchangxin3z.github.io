@@ -28,8 +28,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/setup-node@v5
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
