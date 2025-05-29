@@ -1,11 +1,13 @@
-:root {
+html,
+body {
+  height: 100%; /* 确保 html 和 body 占满整个视口高度 */
+  margin: 0;
+  padding: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f0f8ff; /* 将背景色移到 body */
+  color: #333; /* 默认文字颜色 */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,22 +25,23 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  /* margin: 0; (已在 html, body 中设置) */
+  display: flex; /* 可以考虑移除，如果 App.container 负责布局 */
+  place-items: center; /* 可以考虑移除，如果 App.container 负责布局 */
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; (已在 html, body 中通过 height: 100% 实现) */
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.2em; /* 全局 h1 样式，App.css 中的会覆盖它 */
   line-height: 1.1;
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%; /* 让 #app 占据全部宽度，方便 .container 居中 */
+  /* max-width: 1280px; (如果需要限制最大宽度，可以保留) */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; (如果 App.container 有自己的 padding，这里可以移除) */
   text-align: center;
 }
 
@@ -70,7 +73,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; (移除默认深色背景) */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -82,15 +85,5 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* 移除了 @media (prefers-color-scheme: light) 中的 button 背景色，
+   如果需要浅色模式下的特定按钮样式，可以重新添加。 */

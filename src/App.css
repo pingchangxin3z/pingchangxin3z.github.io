@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* 确保容器占满 #app 的宽度 */
+  min-height: 100vh; /* 确保容器至少和视口一样高 */
+  /* background-color: #f0f8ff; (背景色已移至 src/style.css 的 body) */
+  text-align: center;
+  padding: 20px; /* 给容器一些内边距 */
+  box-sizing: border-box; /* 让 padding 不会增加容器的实际宽高 */
+}
+
+h1 {
+  color: #ff69b4; /* 温柔的粉红色 */
+  font-size: 3rem; /* 调整字体大小 */
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'cursive', sans-serif; /* 可爱的手写风格字体 */
+  padding: 25px 40px;
+  border-radius: 20px; /* 更圆润的边角 */
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 更明显的阴影 */
+  border: 2px dashed #ffb6c1; /* 淡粉色虚线边框 */
+  transition: transform 0.3s ease-in-out; /* 添加鼠标悬浮时的动效 */
+}
+
+h1:hover {
+  transform: scale(1.05); /* 鼠标悬浮时放大一点 */
+}
